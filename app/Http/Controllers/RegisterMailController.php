@@ -24,7 +24,7 @@ class RegisterMailController extends Controller
         ]);
 
         // Send the email with the form details
-        Mail::to('Tobynic101@gmail.com')->queue(new RegisterMail($validated));
+        Mail::to('Tobynic101@gmail.com')->send(new RegisterMail($validated));
 
         // Return a JSON response
         return response()->json(['success' => 'User registered successfully!'], 201);
